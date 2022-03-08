@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+})
 
 app.listen("3000", () => {
     console.log("Server is running on Port 3000.");
