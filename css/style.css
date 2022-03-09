@@ -1,3 +1,18 @@
 body{
-    background-color: aqua;
+    background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+.logoLogin{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    margin-bottom: -20px;
+    
+}
+.container{
+    text-align: center;
+}
+
