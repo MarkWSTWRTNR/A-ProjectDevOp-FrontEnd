@@ -1,18 +1,37 @@
-body{
-    background: no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-.logoLogin{
+
+.logoLogin {
     background-size: cover;
     background-repeat: no-repeat;
     height: 150px;
     margin-bottom: -20px;
-    
 }
-.container{
+
+.container {
     text-align: center;
 }
 
+.center {
+    margin: auto;
+    width: auto;
+    border: 3px solid;
+    padding: 5px;
+}
+
+.spaceH {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.decolateTable {
+    font-size: 100px;
+    width: 300px;
+    border-radius: 30%;
+    border: 2px solid;
+}
