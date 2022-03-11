@@ -10,7 +10,15 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'));
 
 app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/index.html");
+})
+
+app.get("/indexKitchen.html", function (req, res) {
   res.sendFile(__dirname + "/indexKitchen.html");
+})
+
+app.get("/indexCustomer.html", function (req, res) {
+  res.sendFile(__dirname + "/indexCustomer.html");
 })
 
 app.listen("3000", () => {
