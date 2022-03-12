@@ -1,0 +1,47 @@
+<%- include("partials/header") -%>
+
+    <body style="background-image: url(bglogin.jpg);">
+        <div>
+
+            <a href="/" style="color: white; font-size: 50px"><i class="bi bi-house-fill"></i></a>
+
+        </div>
+        <div class="container">
+            <img src="logo.png" class="logoLogin" alt="logo">
+        </div>
+        <div>
+            <h1 class="container" style="color: white; font-weight: bold; text-shadow: 4px 3px black;">Connoisseur</h1>
+        </div>
+        <div>
+            <h4 class="container" style="color: white; font-weight: bold; text-shadow:2px 2px black;">Member Login</h4>
+        </div>
+
+
+
+
+        <form class="container">
+
+
+            <label for="username" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Username:</label><br>
+            <i class="bi bi-person-circle" style="color: white; font-size: 20px;"></i>
+            <input type="text" id="username" name="username" style=" font-size:20px"><br>
+            <label for="pwd" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Password:</label><br>
+            <i class="bi bi-lock-fill" style="font-size:20px; color: white;"></i>
+            <input type="password" id="pwd" name="pwd" style=" font-size:20px"><br>
+
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" style="margin-top: 10px;">
+            <label for="vehicle1" style="font-size: 20px; color: white; text-shadow: 2px 2px black;"> Stay signed in</label><br>
+            <input class="btn btn-primary" type="submit" value="Login" style="margin-top:  30px;font-size:20px; text-shadow:0px 2px black; font-weight: bold;"><br>
+
+        </form>
+
+
+
+        <div class="container" style="margin-top: 30px;">
+            <a href="/register.ejs" style="text-decoration: none underline; color: white; text-shadow: 1px 1px black; font-weight: bold;">Create
+      account</a>
+        </div>
+
+
+        <%- include("partials/footer") -%>
+    </body>

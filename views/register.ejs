@@ -1,0 +1,43 @@
+<%- include("partials/header") -%>
+
+    <body style="background-image: url(/bglogin.jpg);">
+        <div class="container">
+            <img src="/logo.png" class="logoLogin" alt="logo">
+        </div>
+        <div>
+            <h1 class="container" style="color: white; font-weight: bold; text-shadow: 4px 3px black;">Connoisseur</h1>
+        </div>
+        <div>
+            <h4 class="container" style="color: white; font-weight: bold; text-shadow:2px 2px black;">Register</h4>
+        </div>
+
+
+
+
+        <form class="container">
+
+
+            <label for="username" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Username:</label><br>
+            <i class="bi bi-person-circle" style="color: white; font-size: 20px;"></i>
+            <input type="text" id="username" name="username" style=" font-size:20px"><br>
+
+            <label for="pwd" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Password:</label><br>
+            <i class="bi bi-lock-fill" style="font-size:20px; color: white;"></i>
+            <input type="password" id="pwd" name="pwd" style=" font-size:20px"><br>
+
+            <label for="email" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">E-mail:</label><br>
+            <i class="bi bi-envelope-fill" style="font-size:20px; color: white;"></i>
+            <input type="text" id="email" name="email" style=" font-size:20px"><br>
+
+            <input class="btn btn-primary" type="submit" value="Submit" style="margin-top:  30px;font-size:20px; text-shadow:0px 2px black; font-weight: bold;"><br>
+
+        </form>
+
+
+
+        <div class="container" style="margin-top: 30px;">
+            <a href="/" style="text-decoration: none underline; color: white; text-shadow: 1px 1px black; font-weight: bold;">Already
+            have an account?</a>
+        </div>
+        <%- include("partials/footer") -%>
+    </body>

@@ -28,10 +28,3 @@ body {
     text-align: center;
     margin-top: 50px;
 }
-
-.decolateTable {
-    font-size: 100px;
-    width: 300px;
-    border-radius: 30%;
-    border: 2px solid;
-}
