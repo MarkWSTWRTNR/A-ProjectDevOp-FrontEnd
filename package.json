@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Wongsathorn632115035/A-ProjectDevOp-FrontEnd#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.6",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6"
   }
 }

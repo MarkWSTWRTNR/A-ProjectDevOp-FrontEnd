@@ -55,7 +55,11 @@
                     })
                 }).then((res) => res.json())
 
-                console.log(result)
+                if(result.status === 'ok'){
+                    // no error
+                } else {
+                    alert(result.error)
+                }
             }
         </script>
 
