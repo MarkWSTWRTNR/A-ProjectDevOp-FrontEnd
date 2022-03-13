@@ -57,7 +57,7 @@
 
                 if (result.status === 'ok') {
                     // no error
-                    res.render('/order.ejs')
+                    document.location.href = '/order.ejs';
                     console.log('Got the token: ', result.data)
                 } else {
                     alert(result.error)

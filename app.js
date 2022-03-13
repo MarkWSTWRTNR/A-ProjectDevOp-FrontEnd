@@ -113,6 +113,7 @@ app.get("/register.ejs", function(req, res) {
 app.get("/menu.ejs", function(req, res) {
     res.render('menu')
 })
+
 app.get("/order.ejs", function(req, res) {
     res.render('order')
 })
