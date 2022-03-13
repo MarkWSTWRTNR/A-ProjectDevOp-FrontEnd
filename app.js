@@ -90,6 +90,7 @@ app.post('/api/register', async(req, res) => {
 
 app.get("/", function(req, res) {
     res.render('index');
+
 })
 
 
@@ -100,6 +101,11 @@ app.get("/indexCustomer.ejs", function(req, res) {
 app.get("/indexKitchen.ejs", function(req, res) {
     res.render('indexKitchen');
 })
+app.post('/api/order.ejs', async(req, res) => {
+
+})
+
+
 app.get("/register.ejs", function(req, res) {
     res.render('register');
 })
@@ -107,13 +113,36 @@ app.get("/register.ejs", function(req, res) {
 app.get("/menu.ejs", function(req, res) {
     res.render('menu')
 })
+app.get("/order.ejs", function(req, res) {
+    res.render('order')
+})
 
 
 
 // remove cart item buttons
-// var removeCartItemButton = document.getElementsByClassName('btn-danger')
+// var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+// console.log(removeCartItemButtons)
+// for (var i = 0; i < removeCartItemButtons.length; i++) {
+//     var button = removeCartItemButtons[i]
+//     button.addEventListener('click', function(event) {
+//         var buttonClicked = event.target
+//         buttonClicked.parentElement.parentElement.remove()
+//         updateCartTotal()
+//     })
+// }
 
-
+// function updateCartTotal() {
+//     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+//     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+//     for (var i = 0; i < cartRows.length; i++) {
+//         var cartRow = cartRows[i]
+//         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+//         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+//         var price = parseFloat(priceElement.innerText.replace('$', ''))
+//         var quantity = quantityElement.value
+//         console.log(price * quantity)
+//     }
+// }
 
 
 

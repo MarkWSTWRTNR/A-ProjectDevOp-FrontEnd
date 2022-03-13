@@ -196,3 +196,9 @@ body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+.fontOrder {
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}
