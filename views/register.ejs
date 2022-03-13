@@ -14,24 +14,49 @@
 
 
 
-        <form class="container">
+        <form class="container" id="reg-form">
 
 
             <label for="username" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Username:</label><br>
             <i class="bi bi-person-circle" style="color: white; font-size: 20px;"></i>
-            <input type="text" id="username" name="username" style=" font-size:20px"><br>
-
+            <input type="text" id="username" autocomplete="off" name="username" style=" font-size:20px"><br>
             <label for="pwd" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Password:</label><br>
             <i class="bi bi-lock-fill" style="font-size:20px; color: white;"></i>
-            <input type="password" id="pwd" name="pwd" style=" font-size:20px"><br>
+            <input type="password" autocomplete="off" id="pwd" name="pwd" style=" font-size:20px"><br>
 
-            <label for="email" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">E-mail:</label><br>
-            <i class="bi bi-envelope-fill" style="font-size:20px; color: white;"></i>
-            <input type="text" id="email" name="email" style=" font-size:20px"><br>
+            
 
-            <input class="btn btn-primary" type="submit" value="Submit" style="margin-top:  30px;font-size:20px; text-shadow:0px 2px black; font-weight: bold;"><br>
+            <input class="btn btn-primary" type="submit" value="Register" style="margin-top:  30px;font-size:20px; text-shadow:0px 2px black; font-weight: bold;"><br>
 
         </form>
+
+        <script>
+            const form = document.getElementById('reg-form')
+            form.addEventListener('submit', registerUser)
+
+            async function registerUser(event) {
+                event.preventDefault()
+                const username = document.getElementById('username').value
+                const password = document.getElementById('pwd').value
+
+                const result = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username,
+                        password
+                    })
+                }).then((res) => res.json())
+
+                if(result.status === 'ok'){
+                    // no error
+                } else {
+                    alert(result.error)
+                }
+            }
+        </script>
 
 
 

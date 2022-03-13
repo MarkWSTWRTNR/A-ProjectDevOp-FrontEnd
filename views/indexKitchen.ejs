@@ -19,7 +19,7 @@
 
 
 
-        <form class="container" id="reg-form">
+        <form class="container" id="login">
 
 
             <label for="username" style="font-size: 20px; color: white; text-shadow: 2px 2px black;">Username:</label><br>
@@ -36,15 +36,15 @@
         </form>
 
         <script>
-            const form = document.getElementById('reg-form')
-            form.addEventListener('submit', registerUser)
+            const form = document.getElementById('login')
+            form.addEventListener('submit', login)
 
-            async function registerUser(event) {
+            async function login(event) {
                 event.preventDefault()
                 const username = document.getElementById('username').value
                 const password = document.getElementById('pwd').value
 
-                const result = await fetch('/api/register', {
+                const result = await fetch('/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -57,6 +57,7 @@
 
                 if(result.status === 'ok'){
                     // no error
+                    console.log('Got the token: ', result.data)
                 } else {
                     alert(result.error)
                 }
