@@ -1,6 +1,7 @@
 <%- include("partials/header") -%>
 
     <body style="background-image: url(/bgcustomer.jpg);">
+
         <header>
 
             <nav class="navbar fixed-top  navbar-expand-lg navbar-light bg-light" style="opacity:0.75">
@@ -35,8 +36,9 @@
 
                         </ul>
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+
+                            <input id="searchBar" name="search" onkeyup="search_food_info()" class="form-control me-2" type="search" placeholder="Search Food" aria-label="Search">
+
                         </form>
                     </div>
                 </div>
@@ -47,16 +49,17 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <section class="container content-section" id="appetizer">
 
-            <!-- ข้อมูลอาหาร https://www.foodandwine.com/appetizers/all-american-appetizers?slide=c5478557-3171-4fbc-a159-de193dbd25ac#c5478557-3171-4fbc-a159-de193dbd25ac -->
+
 
             <h2 class="section-header">Appetizer</h2>
 
-            <div class="shop-items">
+            <div class="shop-items" id="sticky">
                 <div class="shop-item">
                     <span class="shop-item-title">Sticky Baked Chicken Wings</span>
                     <img class="shop-item-image" src="/foodImg/Appetizer/Sticky Baked Chicken Wings.png">
                     <div>
-                        <span class="shop-item-price">Price: $3.33</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $3.33</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold; text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -64,7 +67,8 @@
                     <span class="shop-item-title">Caesar Salad Spears</span>
                     <img class="shop-item-image" src="/foodImg/Appetizer/Caesar Salad Spears.png">
                     <div>
-                        <span class="shop-item-price">Price: $2.70</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $2.70</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -72,7 +76,8 @@
                     <span class="shop-item-title">Pickled Shrimp with Creamy Spinach Dip</span>
                     <img class="shop-item-image" src="/foodImg/Appetizer/Pickled Shrimp with Creamy Spinach Dip.png">
                     <div>
-                        <span class="shop-item-price">Price: $4.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $4.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -80,7 +85,8 @@
                     <span class="shop-item-title">Pigs in a Blanket with Black Pepper Pastry</span>
                     <img class="shop-item-image" src="/foodImg/Appetizer/Pigs in a Blanket with Black Pepper Pastry.png">
                     <div>
-                        <span class="shop-item-price">Price: $4.50</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $4.50</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -94,7 +100,8 @@
                     <span class="shop-item-title">LAMB BOLOGNESE WITH FETA & MINT</span>
                     <img class="shop-item-image" src="/foodImg/Main dish/LAMB BOLOGNESE WITH FETA & MINT.png">
                     <div>
-                        <span class="shop-item-price">Price: $8.99</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $8.99</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -102,7 +109,8 @@
                     <span class="shop-item-title">ROASTED PORTOBELLO TOPPED WITH SPICY SHRIMP BRUSCHETTA (PALEO/WHOLE30)</span>
                     <img class="shop-item-image" src="/foodImg/Main dish/ROASTED PORTOBELLO TOPPED WITH SPICY SHRIMP BRUSCHETTA.png">
                     <div>
-                        <span class="shop-item-price">Price: $11.99</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $11.99</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -110,7 +118,8 @@
                     <span class="shop-item-title">GRILLED CHICKEN WITH FRESH CHERRY SALSA</span>
                     <img class="shop-item-image" src="/foodImg/Main dish/GRILLED CHICKEN WITH FRESH CHERRY SALSA.png">
                     <div>
-                        <span class="shop-item-price">Price: $9.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $9.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -118,7 +127,8 @@
                     <span class="shop-item-title">Braised Chicken Legs With Grapes and Fennel</span>
                     <img class="shop-item-image" src="/foodImg/Main dish/Braised Chicken Legs With Grapes and Fennel.png">
                     <div>
-                        <span class="shop-item-price">Price: $7.60</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $7.60</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -126,7 +136,8 @@
                     <span class="shop-item-title">Seared Scallops With Brown Butter and Lemon Pan Sauce</span>
                     <img class="shop-item-image" src="/foodImg/Main dish/Seared Scallops With Brown Butter and Lemon Pan Sauce.png">
                     <div>
-                        <span class="shop-item-price">Price: $10.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $10.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -140,7 +151,8 @@
                     <span class="shop-item-title">Mille crepe</span>
                     <img class="shop-item-image" src="/foodImg/Dessert/Mille crepe.png">
                     <div>
-                        <span class="shop-item-price">Price: $3.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $3.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -148,7 +160,8 @@
                     <span class="shop-item-title">Cashew nut brownie</span>
                     <img class="shop-item-image" src="/foodImg/Dessert/Cashew nut brownie.png">
                     <div>
-                        <span class="shop-item-price">Price: $2.50</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $2.50</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -156,7 +169,8 @@
                     <span class="shop-item-title">Tiramisu</span>
                     <img class="shop-item-image" src="/foodImg/Dessert/Tiramisu.png">
                     <div>
-                        <span class="shop-item-price">Price: $4.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $4.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -171,7 +185,8 @@
                     <span class="shop-item-title">Orange Juice</span>
                     <img class="shop-item-image" src="/foodImg/Beverage/Orange Juice.png">
                     <div>
-                        <span class="shop-item-price">Price: $2.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $2.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -179,7 +194,8 @@
                     <span class="shop-item-title">Watermelon Smoothie</span>
                     <img class="shop-item-image" src="/foodImg/Beverage/Watermelon Smoothie.png">
                     <div>
-                        <span class="shop-item-price">Price: $2.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price"> $2.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -187,7 +203,8 @@
                     <span class="shop-item-title">Red Lime Soda</span>
                     <img class="shop-item-image" src="/foodImg/Beverage/Red Lime Soda.png">
                     <div>
-                        <span class="shop-item-price">Price: $2.00</span><br>
+                        <h4 class="fontOrder">Price:
+                            <span class="shop-item-price">$2.00</span><br></h4>
                         <button class="btn btn-warning shop-item-button" type="button" style="color: white; font-weight: bold;text-shadow: 1px 1px black;">ADD TO CART</button>
                     </div>
                 </div>
@@ -238,6 +255,112 @@
         </section>
 
 
+        <!-- // remove cart item buttons -->
+        <script>
+            if (document.readyState == 'loading') {
+                document.addEventListener('DOMContentLoaded', ready)
+            } else {
+                ready()
+            }
+
+            function ready() {
+                var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+                for (var i = 0; i < removeCartItemButtons.length; i++) {
+                    var button = removeCartItemButtons[i]
+                    button.addEventListener('click', removeCartItem)
+                }
+
+                var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+                for (var i = 0; i < quantityInputs.length; i++) {
+                    var input = quantityInputs[i]
+                    input.addEventListener('change', quantityChanged)
+                }
+
+                var addToCartButtons = document.getElementsByClassName('shop-item-button')
+                for (var i = 0; i < addToCartButtons.length; i++) {
+                    var button = addToCartButtons[i]
+                    button.addEventListener('click', addToCartClicked)
+                }
+
+                document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+            }
+
+            function purchaseClicked() {
+                alert('Thank you for your purchase')
+                var cartItems = document.getElementsByClassName('cart-items')[0]
+                while (cartItems.hasChildNodes()) {
+                    cartItems.removeChild(cartItems.firstChild)
+                }
+                updateCartTotal()
+            }
+
+            function removeCartItem(event) {
+                var buttonClicked = event.target
+                buttonClicked.parentElement.parentElement.remove()
+                updateCartTotal()
+            }
+
+            function quantityChanged(event) {
+                var input = event.target
+                if (isNaN(input.value) || input.value <= 0) {
+                    input.value = 1
+                }
+                updateCartTotal()
+            }
+
+            function addToCartClicked(event) {
+                var button = event.target
+                var shopItem = button.parentElement.parentElement
+                var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+                var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+                var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+                addItemToCart(title, price, imageSrc)
+                updateCartTotal()
+            }
+
+            function addItemToCart(title, price, imageSrc) {
+                var cartRow = document.createElement('div')
+                cartRow.classList.add('cart-row')
+                var cartItems = document.getElementsByClassName('cart-items')[0]
+                var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+                for (var i = 0; i < cartItemNames.length; i++) {
+                    if (cartItemNames[i].innerText == title) {
+                        alert('This item is already added to the cart')
+                        return
+                    }
+                }
+                var cartRowContents = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+            <span class="cart-item-title">${title}</span>
+        </div>
+        <span class="cart-price cart-column">${price}</span>
+        <div class="cart-quantity cart-column">
+            <input class="cart-quantity-input" type="number" value="1">
+            <button class="btn btn-danger" type="button">REMOVE</button>
+        </div>`
+                cartRow.innerHTML = cartRowContents
+                cartItems.append(cartRow)
+                cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+                cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+            }
+
+            function updateCartTotal() {
+                var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+                var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+                var total = 0
+                for (var i = 0; i < cartRows.length; i++) {
+                    var cartRow = cartRows[i]
+                    var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+                    var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+                    var price = parseFloat(priceElement.innerText.replace('$', ''))
+                    var quantity = quantityElement.value
+                    total = total + (price * quantity)
+                }
+                total = Math.round(total * 100) / 100
+                document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+            }
+        </script>
 
         <%- include("partials/footer") -%>
     </body>

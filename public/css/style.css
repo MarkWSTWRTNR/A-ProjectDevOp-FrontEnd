@@ -202,3 +202,7 @@ body {
     font-weight: bold;
     text-shadow: 2px 2px black;
 }
+
+.order-column {
+    border-bottom: 1px solid black;
+}
