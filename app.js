@@ -16,52 +16,56 @@ mongoose.connect('mongodb://localhost:27017/login-app-db', {
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.post('/api/login', async (req,res) => {
+app.use(express.static('public'));
+
+app.post('/api/login', async(req, res) => {
     const { username, password } = req.body
-	const user = await User.findOne({ username }).lean()
+    const user = await User.findOne({ username }).lean()
 
-	if (!user) {
-		return res.json({ status: 'error', error: 'Invalid username/password' })
-	}
+    if (!user) {
+        return res.json({ status: 'error', error: 'Invalid username/password' })
+    }
 
-	if (await bcrypt.compare(password, user.password)) {
-		// the username, password combination is successful
+    if (await bcrypt.compare(password, user.password)) {
+        // the username, password combination is successful
 
-		const token = jwt.sign(
-			{
-				id: user._id,
-				username: user.username
-			},
-			JWT_SECRET
-		)
+        const token = jwt.sign({
+                id: user._id,
+                username: user.username
+            },
+            JWT_SECRET
+        )
 
-		return res.json({ status: 'ok', data: token })
-	}
+        return res.json({ status: 'ok', data: token })
+    }
 
-	res.json({ status: 'error', error: 'Invalid username/password' })
+    res.json({ status: 'error', error: 'Invalid username/password' })
 })
 
-app.post('/api/register', async (req,res) =>{
+app.post('/api/register', async(req, res) => {
     // get password
     // const { username, password: plainTextPassword} = req.body
     const { username, password: plainTextPassword } = req.body
 
-    if(!username || typeof username !== 'string') {
+    if (!username || typeof username !== 'string') {
         return res.json({ status: 'error', error: 'Invalid username' })
     }
 
     if (!plainTextPassword || typeof plainTextPassword !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid password' })
-	}
+        return res.json({ status: 'error', error: 'Invalid password' })
+    }
 
     if (plainTextPassword.length < 5) {
-		return res.json({
-			status: 'error',
-			error: 'Password too small. Should be atleast 6 characters'
-		})
-	}
-    
+        return res.json({
+            status: 'error',
+            error: 'Password too small. Should be atleast 6 characters'
+        })
+    }
+
     // encrypt password
     const password = await bcrypt.hash(plainTextPassword, 10)
 
@@ -72,22 +76,17 @@ app.post('/api/register', async (req,res) =>{
         })
         console.log('User created successfully: ', response)
     } catch (error) {
-        if (error.code === 11000){
+        if (error.code === 11000) {
             // duplicate key
-            return res.json({ status: 'error', error: 'Username already in use'})
+            return res.json({ status: 'error', error: 'Username already in use' })
         }
         throw error
     }
-    
+
     // console.log(await bcrypt.hash(password, 10))
     res.json({ status: 'ok' })
 })
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-app.use(express.static('public'));
 
 app.get("/", function(req, res) {
     res.render('index');
@@ -104,6 +103,20 @@ app.get("/indexKitchen.ejs", function(req, res) {
 app.get("/register.ejs", function(req, res) {
     res.render('register');
 })
+
+app.get("/menu.ejs", function(req, res) {
+    res.render('menu')
+})
+
+
+
+// remove cart item buttons
+// var removeCartItemButton = document.getElementsByClassName('btn-danger')
+
+
+
+
+
 app.listen("3000", () => {
     console.log("Server is running on Port 3000.");
 });
