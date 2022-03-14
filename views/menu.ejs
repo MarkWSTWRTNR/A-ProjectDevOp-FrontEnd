@@ -4,9 +4,9 @@
 
         <header>
 
-            <nav class="navbar fixed-top  navbar-expand-lg navbar-light bg-light" style="opacity:0.75">
+            <nav class="navbar fixed-top  navbar-expand-lg navbar-light bg-light" style="opacity:0.8">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Menu</a>
+                    <a class="navbar-brand" href="#">Connoisseur</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -38,22 +38,22 @@
                         <form class="d-flex">
 
                             <input id="searchBar" name="search" onkeyup="search_food_info()" class="form-control me-2" type="search" placeholder="Search Food" aria-label="Search">
-
+                            <button onClick="window.location.reload();">Refresh Page</button>
                         </form>
                     </div>
                 </div>
             </nav>
 
         </header>
-
+        <!-- <div id="products"></div> -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <section class="container content-section" id="appetizer">
+        <section class="container content-section" id="appetizer" style="margin-top: 70px;">
 
 
 
             <h2 class="section-header">Appetizer</h2>
 
-            <div class="shop-items" id="sticky">
+            <div class="shop-items">
                 <div class="shop-item">
                     <span class="shop-item-title">Sticky Baked Chicken Wings</span>
                     <img class="shop-item-image" src="/foodImg/Appetizer/Sticky Baked Chicken Wings.png">
@@ -214,8 +214,6 @@
 
 
 
-
-
         <section class="container content-section" id="cart">
             <h2 class="section-header">My Order</h2>
             <div class="cart-row">
@@ -235,6 +233,37 @@
             </div>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
+        <!-- search bar -->
+        <script>
+            function search_food_info() {
+                let input = document.getElementById('searchBar').value
+                input = input.toLowerCase();
+                let x = document.getElementsByClassName('shop-item-title');
+                let y = document.getElementsByClassName('shop-item-image');
+                let z = document.getElementsByClassName('fontOrder');
+                let a = document.getElementsByClassName('shop-item-price');
+                let b = document.getElementsByClassName('shop-item-button');
+
+                for (i = 0; i < x.length; i++) {
+                    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                        x[i].style.display = "none";
+                        y[i].style.display = "none";
+                        z[i].style.display = "none";
+                        a[i].style.display = "none";
+                        b[i].style.display = "none";
+
+                    } else if (input) {
+                        x[i].style.display = "item";
+                        y[i].style.display = "item";
+                        z[i].style.display = "item";
+                        a[i].style.display = "item";
+                        b[i].style.display = "item";
+
+                    }
+                }
+            }
+        </script>
+
 
 
         <!-- // remove cart item buttons -->
