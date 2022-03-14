@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    container_name: finaldeploy
+    restart: always
+    image:  phonkritcmu/234-project-2:latest
+    ports:
+      - "8070:8080"
