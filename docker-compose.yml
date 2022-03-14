@@ -1,8 +1,8 @@
 version: '3'
 services:
   app:
-    container_name: finaldeploy
+    container_name: finaldeploy-main
     restart: always
-    image:  phonkritcmu/234-project-2:latest
+    image:  phonkritcmu/234-project-2-main:latest
     ports:
-      - "8070:3000"
+      - "8071:3000"

@@ -2,7 +2,7 @@ name: deploy frontend application
 'on':
   push:
     branches:
-      - Dev
+      - main
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -33,13 +33,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: phonkritcmu/234-project-2:latest
+          tags: phonkritcmu/234-project-2-main:latest
       -
         name: prepare the docker-compose run
         run: |
-              mkdir 234-project-2
-              cp docker-compose.yml 234-project-2/docker-compose.yml
-              cd 234-project-2
+              mkdir 234-project-2-main
+              cp docker-compose.yml 234-project-2-main/docker-compose.yml
+              cd 234-project-2-main
               docker-compose -H ${{ secrets.HOST_SERVER  }} down
               docker-compose -H ${{ secrets.HOST_SERVER  }} pull
               docker-compose -H ${{ secrets.HOST_SERVER  }} up -d
